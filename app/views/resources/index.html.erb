@@ -1,0 +1,16 @@
+<h1>Resources#index</h1>
+
+<%= link_to "New resource", new_resource_path %>
+<% @resources.each do |resource| %>
+  <div class="card shadow">
+    <h3><%= resource.title %></h3>
+    <span><%= resource.url %></span>
+    <p><%= resource.description %></p>
+    <div class="tag">
+      <% resource.categories.each do |category| %>
+        <span><%= category.name %></span>
+      <% end %>
+    </div>
+    <%= link_to "View more", resource_path(resource) %>
+  </div>
+<% end %>

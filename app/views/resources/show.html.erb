@@ -1,0 +1,13 @@
+<h1><%= @resource.title %></h1>
+<%= link_to @resource.url, "#{@resource.url}", target: "_blank" %>
+<p><%= @resource.description %></p>
+<div class="tag">
+  <% @resource.categories.each do |category| %>
+    <span><%= category.name %></span>
+  <% end %>
+</div>
+<%= link_to "Back", :back %>
+<%= link_to "Edit", edit_resource_path %>
+<%= link_to "Destroy", resource_path(@resource), method: :delete %>
+
+
