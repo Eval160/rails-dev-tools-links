@@ -3,6 +3,7 @@
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :url %>
+  <%= f.association :categories, as: :check_boxes, collection: Category.order("name"), wrapper: :vertical_collection_inline %>
   <%= f.button :submit %>
 <% end %>
 <%= link_to "Back", :back %>

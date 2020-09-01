@@ -1,10 +1,11 @@
 class ResourcesController < ApplicationController
+  before_action :set_params, only: [:show, :edit, :update, :destroy]
+
   def index
     @resources = Resource.all
   end
 
   def show
-    @resource = Resource.find(params[:id])
   end
 
   def new
@@ -14,6 +15,7 @@ class ResourcesController < ApplicationController
   def create
     @resource = Resource.new(resource_params)
     if @resource.save
+      create_category_tag
       redirect_to resources_path
     else
       render :new
@@ -21,12 +23,13 @@ class ResourcesController < ApplicationController
   end
 
   def edit
-    @resource = Resource.find(params[:id])
+    @categories = Category.all
   end
 
   def update
-    @resource = Resource.find(params[:id])
     if @resource.update(resource_params)
+      CategoryTag.where(resource: @resource).destroy_all
+      create_category_tag
       redirect_to resource_path(@resource)
     else
       render :edit
@@ -34,14 +37,23 @@ class ResourcesController < ApplicationController
   end
 
   def destroy
-    @resource = Resource.find(params[:id])
     @resource.destroy
     redirect_to resources_path
   end
 
   private
 
+  def set_params
+    @resource = Resource.find(params[:id])
+  end
+
   def resource_params
     params.require(:resource).permit(:title, :description, :url)
+  end
+
+  def create_category_tag
+    params[:resource][:category_ids].each do |category_id|
+      CategoryTag.create(category: Category.find(category_id), resource: @resource) unless category_id.empty?
+    end
   end
 end
