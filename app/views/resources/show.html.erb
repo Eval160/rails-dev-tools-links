@@ -1,6 +1,7 @@
 <h1><%= @resource.title %></h1>
 <%= link_to @resource.url, "#{@resource.url}", target: "_blank" %>
 <p><%= @resource.description %></p>
+<p>fav [<%= current_user.favorites.find_by(resource: @resource) ? "X" : " "%>]</p>
 <div class="tag">
   <% @resource.categories.each do |category| %>
     <span><%= category.name %></span>
@@ -9,4 +10,3 @@
 <%= link_to "Back", resources_path %>
 <%= link_to "Edit", edit_resource_path %>
 <%= link_to "Destroy", resource_path(@resource), method: :delete %>
-<%= link_to "add to fav",  resource_favorites_path(@resource), method: :post %>

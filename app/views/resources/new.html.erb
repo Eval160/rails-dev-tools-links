@@ -1,8 +1,15 @@
 <h1>Resources#new</h1>
 <%= simple_form_for @resource do |f| %>
-  <%= f.input :title %>
+  <%= f.input :title, label: "Titre" %>
   <%= f.input :description %>
   <%= f.input :url %>
-  <%= f.association :categories, as: :check_boxes, collection: Category.order("name"), wrapper: :vertical_collection_inline %>
+  <%= f.association :categories, label: "Catégories", as: :check_boxes, collection: Category.order("name"), wrapper: :vertical_collection_inline %>
+
+  <%= simple_fields_for :category do |f| %>
+    <%= f.input :name, label: "Nom de la catégorie" %>
+  <% end %>
+
   <%= f.button :submit %>
 <% end %>
+<%= link_to "Back", :back %>
+

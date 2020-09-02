@@ -4,4 +4,10 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.new(user: current_user, resource: @resource)
     redirect_to resource_path(@resource) if @favorite.save
   end
+
+  def destroy
+    @favorite = Favorite.find(params[:id])
+    @favorite.destroy
+    redirect_to resources_path
+  end
 end

@@ -12,5 +12,16 @@
       <% end %>
     </div>
     <%= link_to "View more", resource_path(resource) %>
+    <div class="">
+      <% if current_user.favorites.find_by(resource: resource) %>
+        <%= link_to favorite_path(current_user.favorites.find_by(resource: resource)), method: :delete do %>
+          <i class="fas fa-heart"></i>
+         <% end %>
+      <% else %>
+        <%= link_to resource_favorites_path(resource), method: :post do %>
+          <i class="far fa-heart"></i>
+         <% end %>
+      <% end %>
+    </div>
   </div>
 <% end %>
