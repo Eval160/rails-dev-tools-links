@@ -8,8 +8,8 @@
         <input type="hidden" name="resource[category_ids][]" value="">
         <div class="category-choices">
           <% Category.order(:name).each do |category| %>
-            <input class="d-none" type="checkbox" value="<%= category.id %>" name="resource[category_ids][]" id="resource_category_ids_<%= category.id %> ">
-            <label class="category-choice" for="resource_category_ids_<%= category.id %>"><%= category.name %></label>
+            <input class="d-none" type="checkbox" value="<%= category.id %>" name="resource[category_ids][]" id="resource_category_ids_<%= category.id %>" <%= "checked='true'" if @resource.categories.include?(category) %> >
+            <label class="category-choice <%= 'active' if @resource.categories.include?(category) %>" for="resource_category_ids_<%= category.id %>"><%= category.name %></label>
           <% end %>
         </div>
         <small class="form-text text-muted">Plusieurs choix possibles</small>
@@ -17,10 +17,10 @@
       <p>Besoin d'ajouter une catégorie? <%= link_to " >Clique ici<", new_category_path %> </p>
       <div class="row ml-auto mr-auto">
         <div class="col-xs-6 mr-3">
-          <%= f.input :title, label: "Titre", placeholder: "Site du Zero" %>
+          <%= f.input :title, label: "Titre"%>
         </div>
         <div class="col-xs-6">
-          <%= f.input :url, placeholder: "https://supersite.com" %>
+          <%= f.input :url%>
         </div>
       </div>
       <%= f.input :description %>

@@ -22,7 +22,6 @@ class ResourcesController < ApplicationController
   end
 
   def edit
-    @categories = Category.all
   end
 
   def update
