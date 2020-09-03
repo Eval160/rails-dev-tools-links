@@ -1,14 +1,10 @@
-<h1>Resources#new</h1>
+<h1>Ajouter une nouvelle ressource</h1>
 <%= simple_form_for @resource do |f| %>
+  <%= f.association :categories, label: "Catégorie(s)", as: :check_boxes, collection: Category.order("name"), wrapper: :vertical_collection_inline, hint: "Plusieurs catégories peuvent être selectionnées" %>
+  <p>Besoin d'ajouter une catégorie? <%= link_to "Clique ici", new_category_path %> </p>
   <%= f.input :title, label: "Titre" %>
   <%= f.input :description %>
   <%= f.input :url %>
-  <%= f.association :categories, label: "Catégories", as: :check_boxes, collection: Category.order("name"), wrapper: :vertical_collection_inline %>
-
-  <%= simple_fields_for :category do |f| %>
-    <%= f.input :name, label: "Nom de la catégorie" %>
-  <% end %>
-
   <%= f.button :submit %>
 <% end %>
 <%= link_to "Back", :back %>

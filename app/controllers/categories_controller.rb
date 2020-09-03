@@ -1,13 +1,13 @@
 class CategoriesController < ApplicationController
-  # def new
-  #   @category = Category.new
-  # end
+  def new
+    @category = Category.new
+  end
 
   def create
     @resource = Resource.new
     @category = Category.new(params_category)
     if @category.save
-      redirect_to new_resource_path
+      render new_resource_path
     else
       render "resources/new"
     end
