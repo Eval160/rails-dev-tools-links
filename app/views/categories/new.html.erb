@@ -1,0 +1,15 @@
+<h1>Catégories</h1>
+
+<h3>Catégories déjà existantes: </h3>
+<ul>
+  <% Category.order(:name).each do |category| %>
+    <li><%= category.name %></li>
+  <% end %>
+</ul>
+<h4>Besoin d'en ajouter une nouvelle?</h4>
+<%= simple_form_for @category do |f| %>
+  <%= f.input :name %>
+  <%= f.button :submit, 'Ajouter' %>
+<% end %>
+
+<%= link_to "Revenir à la page précedente", :back %>
