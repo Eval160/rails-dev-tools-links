@@ -15,7 +15,6 @@ class ResourcesController < ApplicationController
   def create
     @resource = Resource.new(resource_params)
     if @resource.save
-      create_category_tag
       redirect_to resources_path
     else
       render :new
@@ -28,9 +27,7 @@ class ResourcesController < ApplicationController
 
   def update
     if @resource.update(resource_params)
-      CategoryTag.where(resource: @resource).destroy_all
-      create_category_tag
-      redirect_to resource_path(@resource)
+      redirect_to resources_path
     else
       render :edit
     end
@@ -48,12 +45,7 @@ class ResourcesController < ApplicationController
   end
 
   def resource_params
-    params.require(:resource).permit(:title, :description, :url)
+    params.require(:resource).permit(:title, :description, :url, category_ids: [])
   end
 
-  def create_category_tag
-    params[:resource][:category_ids].each do |category_id|
-      CategoryTag.create(category: Category.find(category_id), resource: @resource) unless category_id.empty?
-    end
-  end
 end

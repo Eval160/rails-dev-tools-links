@@ -1,12 +1,30 @@
-<h1>Ajouter une nouvelle ressource</h1>
-<%= simple_form_for @resource do |f| %>
-  <%= f.association :categories, label: "Catégorie(s)", as: :check_boxes, collection: Category.order("name"), wrapper: :vertical_collection_inline, hint: "Plusieurs catégories peuvent être selectionnées" %>
-  <p>Besoin d'ajouter une catégorie? <%= link_to ">Clique ici<", new_category_path %> </p>
-  <%= f.input :title, label: "Titre" %>
-  <%= f.input :description %>
-  <%= f.input :url %>
-  <%= f.button :submit, 'Ajouter' %>
-<% end %>
-  <%= link_to "Revenir à la page précedente", :back %>
-
-
+<div class="row">
+  <div class="col-xs-12 col-sm-6 offset-sm-3 form-crud mb-5">
+    <h2>Ajouter une nouvelle ressource</h2>
+    <%= simple_form_for @resource do |f| %>
+      <fieldset class="form-group ">
+        <legend class="col-form-label pt-0">Catégorie(s)</legend>
+        <input type="hidden" name="resource[category_ids][]" value="">
+        <div class="category-choices">
+          <% Category.order(:name).each do |category| %>
+            <input class="d-none" type="checkbox" value="<%= category.id %>" name="resource[category_ids][]" id="resource_category_ids_<%= category.id %> ">
+            <label class="category-choice" for="resource_category_ids_<%= category.id %>"><%= category.name %></label>
+          <% end %>
+        </div>
+        <small class="form-text text-muted">Plusieurs choix possibles</small>
+      </fieldset>
+      <p>Besoin d'ajouter une catégorie? <%= link_to " >Clique ici<", new_category_path %> </p>
+      <div class="row ml-auto mr-auto">
+        <div class="col-xs-6 mr-3">
+          <%= f.input :title, label: "Titre", placeholder: "Site du Zero" %>
+        </div>
+        <div class="col-xs-6">
+          <%= f.input :url, placeholder: "https://supersite.com" %>
+        </div>
+      </div>
+      <%= f.input :description %>
+      <%= f.button :submit, 'Ajouter', class: "btn btn-primary"  %>
+    <% end %>
+      <%= link_to "Revenir à la page précedente", :back %>
+  </div>
+</div>

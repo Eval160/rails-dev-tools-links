@@ -1,15 +1,21 @@
-<h1>Catégories</h1>
 
-<h3>Catégories déjà existantes: </h3>
-<ul>
-  <% Category.order(:name).each do |category| %>
-    <li><%= category.name %></li>
-  <% end %>
-</ul>
-<h4>Besoin d'en ajouter une nouvelle?</h4>
-<%= simple_form_for @category do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit, 'Ajouter' %>
-<% end %>
+<div class="row">
+  <div class="col-xs-12 col-sm-4 offset-sm-4 col-md-6 offset-md-3 form-crud mb-5">
+    <h2>Catégories</h2>
 
-<%= link_to "Revenir à la page précedente", :back %>
+      <h3>Catégories déjà existantes: </h3>
+      <ul>
+        <% Category.order(:name).each do |category| %>
+          <li><%= category.name %></li>
+        <% end %>
+      </ul>
+      <h4>Besoin d'en ajouter une nouvelle?</h4>
+      <%= simple_form_for @category do |f| %>
+        <%= f.input :name %>
+        <%= f.button :submit, 'Ajouter', class: "btn btn-primary"  %>
+      <% end %>
+
+      <%= link_to "Revenir à la page précedente", :back %>
+
+  </div>
+</div>
