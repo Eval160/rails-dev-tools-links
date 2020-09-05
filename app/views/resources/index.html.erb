@@ -1,7 +1,15 @@
+<h3>Filtre de recherche</h3>
+<%= simple_form_for resources_path, method: "get" do %>
+  <% Category.all.each do |category| %>
+    <%= check_box_tag 'category_ids[]', category.id %>
+    <%= category.name %>
+  <% end %>
+  <%= submit_tag("filter") %>
+<% end %>
+
+
 <div class="resources-cards_container">
-
   <% @resources.each do |resource| %>
-
     <div class="card-resource">
       <div class="card-resource_infos d-flex flex-column justify-content-between">
         <div class="card-resource_title d-flex justify-content-between">
@@ -23,7 +31,7 @@
         </div>
         <div class="card-resource_tag">
         <% resource.categories.each do |category| %>
-          <span class="badge badge-secondary"><%= category.name %></span>
+          <span class="badge badge-primary"><%= category.name %></span>
         <% end %>
       </div>
         <div class="card-resource_links-hover d-flex justify-content-between">
