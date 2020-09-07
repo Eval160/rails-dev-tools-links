@@ -3,9 +3,11 @@ class ResourcesController < ApplicationController
 
   def index
     @resources = Resource.all
-    if params[:category_ids]
-      @resources = Resource.joins(:category_tags).where(category_tags: {category: params[:category_ids]})
+    p = params["/resources"]
+    if !params["/resources"].nil? && p[:category].length != 1 && p[:category]
+      @resources = Resource.joins(:category_tags).where(category_tags: { category: p[:category] })
     end
+    # raise
   end
 
   def show

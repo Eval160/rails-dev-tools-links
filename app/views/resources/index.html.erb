@@ -1,12 +1,13 @@
-<h3>Filtre de recherche</h3>
-<%= simple_form_for resources_path, method: "get" do %>
-  <% Category.all.each do |category| %>
-    <%= check_box_tag 'category_ids[]', category.id %>
-    <%= category.name %>
+<div class="category-filter_section">
+  <%= submit_tag "Filtre par catégorie", class: "toogleBtn btn btn-primary mt-4 mb-2" %>
+  <%= simple_form_for resources_path, method: "get" do |f|%>
+    <div class="category-filter d-none ">
+      <%= f.input :category, as: :check_boxes, collection: Category.all, input_html: { class: 'd-none' }   %>
+      <%= f.submit "Filtrer", class: "btn btn-primary filter-btn" %>
+    </div>
   <% end %>
-  <%= submit_tag("filter") %>
-<% end %>
 
+</div>
 
 <div class="resources-cards_container">
   <% @resources.each do |resource| %>

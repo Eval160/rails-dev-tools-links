@@ -26,3 +26,41 @@
     content: " ✓";
   }
 }
+
+.category-filter_section {
+  display: flex;
+  justify-content: center;
+  .toogleBtn {
+    text-align: center;
+  }
+}
+.category-filter {
+  text-align: center;
+  margin: 24px 0;
+  legend {
+    display: none;
+  }
+  .form-group {
+    text-align: center;
+    width: 100%;
+  }
+  .form-check {
+    color: white;
+    display: inline;
+  }
+  .form-check label {
+    border-radius: 5px;
+    background-color: $gray;
+    padding: 8px 16px;
+  }
+  .form-check:hover label {
+    cursor: pointer;
+  }
+  input:checked + label {
+    background-color: $blue;
+  }
+  .filter-btn {
+    width: 30%;
+  }
+}
+
