@@ -1,14 +1,7 @@
-.resources-cards_container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
 .card-resource {
-  margin: 16px;
+  margin: 16px 24px;
   display: flex;
-  width: 400px;
-  height: 300px;
+  height: 250px;
   background-image: url("https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
   background-position: center;
   background-size: cover;
@@ -34,7 +27,8 @@
   opacity: 80%;
   padding: 8px;
   margin-left: auto;
-  transition: 0.4s;
+  transition: 0.3s;
+  position: relative;
   .card-resource_title {
     font-variant: small-caps;
   }
@@ -45,6 +39,13 @@
   .card-resource_text {
     visibility: hidden;
   }
+  .card-resource_tag {
+    position: absolute;
+    bottom: 8px;
+  }
+  &:hover .card-resource_tag{
+    position: inherit;
+  }
   .card-resource_links-hover {
     visibility: hidden;
   }
@@ -54,7 +55,7 @@
   }
   &:hover .card-resource_links-hover, &:hover .card-resource_text {
     visibility: visible;
-    transition-delay: 0.5s;
+    transition-delay: 0.4s;
   }
   .card-resource_link a {
     display: flex;
