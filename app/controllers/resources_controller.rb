@@ -7,7 +7,6 @@ class ResourcesController < ApplicationController
     if !params["/resources"].nil? && p[:category].length != 1 && p[:category]
       @resources = Resource.joins(:category_tags).where(category_tags: { category: p[:category] })
     end
-    # raise
   end
 
   def show
@@ -49,7 +48,7 @@ class ResourcesController < ApplicationController
   end
 
   def resource_params
-    params.require(:resource).permit(:title, :description, :url, category_ids: [])
+    params.require(:resource).permit(:title, :description, :url, category_ids: [], categories_attributes: [:name])
   end
 
 end
