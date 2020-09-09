@@ -10,7 +10,7 @@
 </div>
 
 <div class="row justify-content-center">
-  <% @resources.each do |resource| %>
+  <% @resources.order('random()').each do |resource| %>
     <div class="col-12 col-lg-6" id="resource-<%= resource.id %>">
       <%= render 'card-index', resource: resource %>
     </div>
