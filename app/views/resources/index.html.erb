@@ -11,55 +11,8 @@
 
 <div class="row justify-content-center">
   <% @resources.each do |resource| %>
-    <div class="col-12 col-lg-6">
-
-      <div class="card-resource">
-        <div class="card-resource_infos d-flex flex-column justify-content-between">
-          <div class="card-resource_title d-flex justify-content-between">
-            <h3><%= resource.title %></h3>
-            <div class="">
-              <% if current_user.favorites.find_by(resource: resource) %>
-                <%= link_to favorite_path(current_user.favorites.find_by(resource: resource)), method: :delete do %>
-                  <i class="fas fa-heart"></i>
-                 <% end %>
-              <% else %>
-                <%= link_to resource_favorites_path(resource), method: :post do %>
-                  <i class="far fa-heart"></i>
-                 <% end %>
-              <% end %>
-            </div>
-          </div>
-          <div class="card-resource_text">
-            <p><%= resource.description %></p>
-          </div>
-          <div class="card-resource_tag">
-          <% resource.categories.each do |category| %>
-            <span class="badge badge-primary"><%= category.name %></span>
-          <% end %>
-        </div>
-          <div class="card-resource_links-hover d-flex justify-content-between">
-            <div class="card-resource_link resource_url">
-              <%= link_to resource.url  do %>
-                <i class="fas fa-external-link-alt"></i>
-                <span>Voir le site</span>
-              <% end %>
-            </div>
-            <div class="card-resource_link resource_edit d-flex flex-column align-items-center">
-              <%= link_to edit_resource_path(resource)  do %>
-                <i class="fas fa-edit"></i>
-                <span>Editer</span>
-              <% end %>
-            </div>
-            <div class="card-resource_link resource_delete d-flex flex-column align-items-center">
-              <%= link_to resource_path(resource), method: :delete do %>
-                <i class="fas fa-trash"></i>
-                <span>Supprimer</span>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <div class="col-12 col-lg-6" id="resource-<%= resource.id %>">
+      <%= render 'card-index', resource: resource %>
     </div>
   <% end %>
 </div>

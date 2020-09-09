@@ -1,0 +1,2 @@
+var resourceCard = document.getElementById("resource-<%= @resource.id %>");
+resourceCard.innerHTML = "<%= j render 'resources/card-index', resource: @resource %>";
