@@ -19,4 +19,8 @@ class FavoritesController < ApplicationController
       format.js
     end
   end
+
+  def index
+    @favorites = Favorite.where(user: current_user)
+  end
 end

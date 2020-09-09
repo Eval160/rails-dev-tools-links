@@ -1,0 +1,7 @@
+<div class="row justify-content-center">
+  <% @favorites.each do |favorite| %>
+    <div class="col-12 col-lg-6" id="resource-<%= favorite.resource.id %>">
+      <%= render 'resources/card-index', resource: favorite.resource %>
+    </div>
+  <% end %>
+</div>

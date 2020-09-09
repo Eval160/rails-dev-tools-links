@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :resources do
     resources :favorites, only: :create
   end
-  resources :favorites, only: :destroy
+  resources :favorites, only: [:destroy, :index]
   resources :categories, only: [:new, :create]
 end
