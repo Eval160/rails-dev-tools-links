@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 .container {
-  min-height: calc(100vh - 66px - 70px);
+  flex: 1 0 auto;
 }
