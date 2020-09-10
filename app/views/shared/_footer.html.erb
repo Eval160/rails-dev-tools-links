@@ -1,8 +1,18 @@
 <footer class="footer">
   <div class="footer-medias">
-    <i class="fab fa-linkedin"></i>
-    <i class="fab fa-github"></i>
-    <i class="fab fa-twitter"></i>
+    <%= link_to "https://www.linkedin.com/in/valentine-ecrepont-539519197/", target: "_blank" do %>
+      <i class="fab fa-linkedin"></i>
+    <% end %>
+    <%= link_to "https://github.com/Eval160", target: "_blank"  do %>
+      <i class="fab fa-github"></i>
+    <% end %>
+    <%= link_to "https://twitter.com/Eval160", target: "_blank"  do %>
+      <i class="fab fa-twitter"></i>
+    <% end %>
+    <%= mail_to "ecrepontvalentine@hotmail.fr", target: "_blank", subject: "Remarque à propos de site 'My dev tools links'" do %>
+      <i class="fas fa-at"></i>
+    <% end %>
   </div>
-  <p>Fait avec amour depuis Bordeaux <i class="fas fa-hand-holding-heart"></i> © Valentine Ecrepont - 2020 </p>
+  <p>Fait avec amour depuis Bordeaux <i class="fas fa-hand-holding-heart"></i></p>
+  <p>© Valentine Ecrepont - 2020 </p>
 </footer>

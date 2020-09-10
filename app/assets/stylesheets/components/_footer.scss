@@ -3,13 +3,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 70px;
   padding: 8px;
   background-color: #919FB5;
+  .footer-medias {
+    display: flex;
+    min-width: 30%;
+    justify-content: space-evenly;
+  }
   p {
     margin: 0;
   }
   * {
     color: #D1D7DF;
+  }
+  a {
+    text-decoration: none;
+  }
+  i:hover {
+    color: $blue;
   }
 }
