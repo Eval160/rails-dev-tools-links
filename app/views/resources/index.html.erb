@@ -1,5 +1,5 @@
 <div class="category-filter_section">
-  <%= submit_tag "Filtre par catégorie", class: "toogleBtn btn btn-primary mt-4 mb-2" %>
+  <%= submit_tag "Filtrer par catégorie", class: "toogleBtn btn btn-primary mt-4 mb-2" %>
   <%= simple_form_for resources_path, method: "get" do |f|%>
     <div class="category-filter d-none ">
       <%= f.input :category, as: :check_boxes, collection: Category.all, input_html: { class: 'd-none' }   %>
