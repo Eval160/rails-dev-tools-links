@@ -38,6 +38,7 @@ gem 'simple_form'
 gem "validate_url"
 gem 'link_thumbnailer'
 gem 'pundit'
+gem 'simple_token_authentication'
 
 group :development, :test do
   gem 'pry-byebug'
