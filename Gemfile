@@ -37,6 +37,7 @@ gem 'simple_form'
 # Manually added
 gem "validate_url"
 gem 'link_thumbnailer'
+gem 'pundit'
 
 group :development, :test do
   gem 'pry-byebug'
