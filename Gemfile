@@ -37,6 +37,7 @@ gem 'simple_form'
 # Manually added
 gem "validate_url"
 gem 'link_thumbnailer'
+gem 'cloudinary', '~> 1.16.0'
 
 group :development, :test do
   gem 'pry-byebug'
