@@ -29,10 +29,12 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { categoryChoice } from '../components/category_choice';
 import { toggleFilter } from '../components/category_filter';
+import { togglePassword } from '../components/toggle_password';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   categoryChoice();
   toggleFilter();
+  togglePassword();
 });

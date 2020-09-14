@@ -19,7 +19,10 @@
   a {
     text-decoration: none;
   }
-  i:hover {
-    color: $blue;
+  i {
+    margin: 5px;
+  }
+  a:hover i {
+   color: $blue;
   }
 }

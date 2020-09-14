@@ -1,0 +1,18 @@
+.input-password-wrapper {
+  display: flex;
+  position: relative;
+  i {
+    cursor: pointer;
+    width: 20px;
+    position: absolute;
+    top: 10px;
+    right: 16px;
+  }
+  .form-group.password {
+    flex: 1 1 0;
+    margin-right: 8px;
+  }
+  .form-control:invalid {
+    background-position: right calc(0.375em + 0.1875rem + 20px) center;
+  }
+}
