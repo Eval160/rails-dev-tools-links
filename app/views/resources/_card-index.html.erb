@@ -1,5 +1,5 @@
-<% if resource.image  %>
-  <div class="card-resource" style="background-image: url('<%= resource.image %>')">
+<% if resource.photo.attached?  %>
+  <div class="card-resource" style="background-image: url('<%= cl_image_path resource.photo.key, height: 250, width: 400, crop: :fill %>')">
 <% else %>
   <div class="card-resource" style="background-image: url('https://images.unsplash.com/photo-1489844097929-c8d5b91c456e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=80')">
 <% end %>
@@ -48,5 +48,4 @@
       </div>
     </div>
   </div>
-
 
