@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require "link_thumbnailer"
+require "open-uri"
+require "nokogiri"
 
 def img_url(url)
   unless Nokogiri::HTML(open(url)).css("meta[property='og:image']").blank?
@@ -15,6 +17,10 @@ def img_url(url)
   end
 end
 
+def attach_cloudinary_img(resource)
+  file = URI.open(img_url(resource.url))
+  resource.photo.attach(io: file, filename: resource.title, content_type: 'image/png')
+end
 
 puts "Destroy all users"
 User.destroy_all
@@ -371,5 +377,12 @@ CategoryTag.create! category: tuto_cat, resource: grafikart
 CategoryTag.create! category: html_cat, resource: grafikart
 CategoryTag.create! category: front_cat, resource: grafikart
 CategoryTag.create! category: sass_cat, resource: grafikart
+
+puts "Finish create resources"
+
+puts "attach cloudinary photo"
+Resource.all.each do |resource|
+  attach_cloudinary_img(resource) if resource.image
+end
 
 puts "Finish!"
