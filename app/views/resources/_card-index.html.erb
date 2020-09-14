@@ -7,7 +7,7 @@
       <div class="card-resource_title d-flex justify-content-between">
         <h3><%= resource.title %></h3>
         <div class="">
-          <% if current_user.favorites.find_by(resource: resource) %>
+          <% if signed_in? && current_user.favorites.find_by(resource: resource) %>
             <%= link_to favorite_path(current_user.favorites.find_by(resource: resource)), method: :delete, remote: true  do %>
               <i class="fas fa-heart"></i>
              <% end %>
