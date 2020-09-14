@@ -39,6 +39,7 @@ gem "validate_url"
 gem 'link_thumbnailer'
 gem 'pundit'
 gem 'simple_token_authentication'
+gem 'rack-cors'
 
 group :development, :test do
   gem 'pry-byebug'
