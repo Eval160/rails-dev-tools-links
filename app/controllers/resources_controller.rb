@@ -1,5 +1,6 @@
 class ResourcesController < ApplicationController
   before_action :set_params, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: :index
 
   def index
     @resources = Resource.all
