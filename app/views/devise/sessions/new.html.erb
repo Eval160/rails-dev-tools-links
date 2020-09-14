@@ -1,7 +1,8 @@
 <div class="row">
   <div class="col-xs-12 col-sm-4 offset-sm-4 col-md-6 offset-md-3 form-crud mb-5">
-    <h2>Log in</h2>
+    <h2>Se connecter</h2>
 
+    <small>Connectez-vous pour accéder à vos favoris et partager de nouveau sites</p>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
         <%= f.input :email,
@@ -15,11 +16,12 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Log in", class: "btn btn-primary" %>
+        <%= button_tag :submit, class: "btn btn-primary" do %>
+            <i class="fas fa-sign-in-alt"></i> Se connecter
+        <% end %>
       </div>
       <%= render "devise/shared/links" %>
     <% end %>
-
-
   </div>
 </div>
+
