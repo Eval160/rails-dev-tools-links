@@ -9,10 +9,15 @@
                     required: false,
                     autofocus: true,
                     input_html: { autocomplete: "email" } %>
-        <%= f.input :password,
-                    required: false,
-                    input_html: { autocomplete: "current-password" } %>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <%=f.label :password %>
+        <div class="input-password-wrapper">
+          <%= f.input :password,
+                      label: false,
+                      required: false,
+                      input_html: { autocomplete: "current-password" } %>
+          <i class="far fa-eye"></i>
+        </div>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
 
       <div class="form-actions">
