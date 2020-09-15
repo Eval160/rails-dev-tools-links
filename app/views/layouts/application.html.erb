@@ -9,14 +9,22 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <%= favicon_link_tag asset_path('logo.png') %>
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <div class="container">
+    <% unless current_page?(root_path) %>
+      <%= render 'shared/navbar' %>
+      <div class="container">
+        <%= yield %>
+      </div>
+    <% else %>
       <%= yield %>
-    </div>
-    <%= render 'shared/footer' %>
+    <% end %>
+
+    <% unless current_page?(root_path) %>
+      <%= render 'shared/footer' %>
+    <% end %>
   </body>
 </html>

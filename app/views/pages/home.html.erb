@@ -1,7 +1,12 @@
-<div class="wrapper m-4">
-  <h1>My Dev Tools</h1>
-  <h3>Site de partage de ressources en rapport avec le développement web</h3>
-
-  <p>Que vous cherchiez une alternative à la barre favoris de votre navigateur ou bien à partager des sites intéressants avec la communauté, vous êtes le bienvenu</p>
-  <p>Ce site est une V1 et sera amélioré avec le temps. N'hésitez pas à me <%= mail_to "ecrepontvalentine@hotmail.fr", "contacter" %> si vous avez des idées d'amélioration ou rencontrez un bug 🐞</p>
+<div class="homepage_wrapper d-flex align-items-center">
+  <div class="container">
+    <h1>Bienvenu sur <strong>My Dev Tools Links</strong></h1>
+    <h2>Site de partage de ressources pour les développeurs </h2>
+    <p>Les favoris de votre navigateur s'entassent et vous avez du mal à vous y retrouvez?</p>
+    <p>Vous voulez partager avec la communauté des sites fascinants?</p>
+    <p>Quelque soit la raison, cette application est faite pour vous</p>
+    <%= link_to "Voir les sites",resources_path, class: "btn btn-light" %>
+    <%= link_to "Se connecter",new_user_session_path, class: "btn btn-outline-light" %>
+  </div>
 </div>
+
