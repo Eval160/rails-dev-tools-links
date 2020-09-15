@@ -1,0 +1,22 @@
+.homepage_wrapper {
+  background: asset-url('homepage-bg.jpg');
+  background-size: cover;
+  height: 100vh;
+  color: white;
+  h1 {
+    text-transform: uppercase;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+  }
+  h2 {
+    margin-bottom: 2rem;
+  }
+  p {
+    margin: 0px;
+  }
+  .btn.btn-light {
+    margin-top: 2rem;
+  }
+}
