@@ -3,4 +3,9 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def download
+    @api_key = current_user.authentication_token
+  end
+
 end
