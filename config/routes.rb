@@ -14,4 +14,6 @@ Rails.application.routes.draw do
     end
   end
 
+  get "/download", to: "pages#download", as: "download"
+
 end
