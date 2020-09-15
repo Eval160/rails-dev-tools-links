@@ -1,4 +1,7 @@
 class ResourcesController < ApplicationController
+  require "open-uri"
+  require "nokogiri"
+
   before_action :set_params, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: :index
 
@@ -19,7 +22,12 @@ class ResourcesController < ApplicationController
 
   def create
     @resource = Resource.new(resource_params)
-    if @resource.save
+    @resource.user = current_user
+    if @resource.photo.present? && @resource.save
+      redirect_to resources_path
+    elsif @resource.valid?
+      attach_cloudinary_img(@resource)
+      @resource.save
       redirect_to resources_path
     else
       render :new
@@ -50,5 +58,18 @@ class ResourcesController < ApplicationController
 
   def resource_params
     params.require(:resource).permit(:title, :description, :url, :photo, category_ids: [], categories_attributes: [:name])
+  end
+
+  def img_url(url)
+    if Nokogiri::HTML(open(url)).css("meta[property='og:image']").blank?
+      nil
+    else
+      Nokogiri::HTML(open(url)).css("meta[property='og:image']").first.attributes["content"].value
+    end
+  end
+
+  def attach_cloudinary_img(resource)
+    file = URI.open(img_url(resource.url))
+    resource.photo.attach(io: file, filename: resource.title, content_type: 'image/png')
   end
 end

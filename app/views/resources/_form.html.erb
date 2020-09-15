@@ -10,7 +10,6 @@
           <% Category.order(:name).each do |category| %>
             <input class="d-none" type="checkbox" value="<%= category.id %>" name="resource[category_ids][]" id="resource_category_ids_<%= category.id %>" <%= "checked='true'" if @resource.categories.include?(category) %> >
             <label class="category-choice <%= 'active' if @resource.categories.include?(category) %>" for="resource_category_ids_<%= category.id %>"><%= category.name %></label>
-
           <% end %>
         </div>
 
@@ -20,8 +19,8 @@
               <%= category_attributes.text_field :name, class: "form-control" %>
           <% end %>
         </div>
-
       </fieldset>
+
       <div class="d-flex justify-content-between resources_inline-input">
         <%= f.input :title, label: "Titre", placeholder: "Site du Zero" %>
         <%= f.input :url, placeholder: "https://supersite.com" %>
