@@ -30,6 +30,7 @@ import "bootstrap";
 import { categoryChoice } from '../components/category_choice';
 import { toggleFilter } from '../components/category_filter';
 import { togglePassword } from '../components/toggle_password';
+import { toggleUploadBtn } from '../components/upload_btn';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -37,4 +38,5 @@ document.addEventListener('turbolinks:load', () => {
   categoryChoice();
   toggleFilter();
   togglePassword();
+  toggleUploadBtn();
 });

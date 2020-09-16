@@ -16,7 +16,6 @@ const toggleIcon = (icon) => {
 
 const togglePassword = () => {
   const passwordWrappers = document.querySelectorAll(".input-password-wrapper")
-  console.log(passwordWrappers)
   if (passwordWrappers) {
     passwordWrappers.forEach((element) => {
       const icon = element.querySelector(".far")

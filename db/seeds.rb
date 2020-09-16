@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require "link_thumbnailer"
 require "open-uri"
 require "nokogiri"
 
@@ -65,9 +64,7 @@ html_css_color_picker = Resource.create!(
   user: users.sample,
   title: "HTML CSS Color Picker",
   description: "Librairie de couleurs: informations, générateur de dégradés, roues chromatiques, associations possibles....",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: front_cat, resource: html_css_color_picker
 CategoryTag.create! category: html_cat, resource: html_css_color_picker
@@ -79,9 +76,7 @@ js_de_zero = Resource.create!(
   user: users.sample,
   title: "Javascript de Zero",
   description: "Très bon site pour apprendre le js, le module débutant, pour les novices en programmation, est gratuit",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: js_cat, resource: js_de_zero
 CategoryTag.create! category: tuto_cat, resource: js_de_zero
@@ -92,9 +87,7 @@ ruby_doc = Resource.create!(
   user: users.sample,
   title: "RUBYDoc",
   description: "Doc officielle de ruby",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: ruby_cat, resource: ruby_doc
 CategoryTag.create! category: doc_cat, resource: ruby_doc
@@ -105,9 +98,7 @@ ror_doc = Resource.create!(
   user: users.sample,
   title: "Ruby On Rails guides",
   description: "Doc de ruby on rails",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: ruby_cat, resource: ror_doc
 CategoryTag.create! category: doc_cat, resource: ror_doc
@@ -118,9 +109,7 @@ undraw = Resource.create!(
   user: users.sample,
   title: "Undraw",
   description: "Illustrations open-sources en format SVG ou PNG, on peut personnaliser la couleur",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: front_cat, resource: undraw
 CategoryTag.create! category: webdesign_cat, resource: undraw
@@ -130,9 +119,7 @@ pierregiraud = Resource.create!(
   user: users.sample,
   title: "Pierre Giraud",
   description: "Site proposant des cours sur HTML/CSS, Bootstrap, JS, SASS, mais aussi PHP, MySQL, Python, git....",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: front_cat, resource: pierregiraud
 CategoryTag.create! category: js_cat, resource: pierregiraud
@@ -149,9 +136,7 @@ codrops = Resource.create!(
   user: users.sample,
   title: "Codrops",
   description: "Inspirations, tutos, actualités en rapport avec le webdesign et de developpement front",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: front_cat, resource: codrops
 CategoryTag.create! category: js_cat, resource: codrops
@@ -164,9 +149,7 @@ devdocs = Resource.create!(
   user: users.sample,
   title: "Devdocs.io",
   description: "Regroupe les docs de nombreux languages et frameworks",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: front_cat, resource: devdocs
 CategoryTag.create! category: js_cat, resource: devdocs
@@ -184,9 +167,7 @@ mdn = Resource.create!(
   user: users.sample,
   title: "MDN web docs",
   description: "Doc html/css et js, le site propose également des tuto front. Disponible en français, la version anglaise est plus complète et plus souvent mise à jour",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: front_cat, resource: mdn
 CategoryTag.create! category: js_cat, resource: mdn
@@ -199,9 +180,7 @@ codewars = Resource.create!(
   user: users.sample,
   title: "Codewars",
   description: "Site de référence pour s'exercicer et progresser dans un language, très ludique",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: back_cat, resource: codewars
 CategoryTag.create! category: js_cat, resource: codewars
@@ -215,9 +194,7 @@ htmlreference = Resource.create!(
   user: users.sample,
   title: "Html reference",
   description: "Référence tous les éléments et attributs HTML, avec pour chacun une description et des exemples",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: html_cat, resource: htmlreference
 CategoryTag.create! category: front_cat, resource: htmlreference
@@ -227,9 +204,7 @@ cssreference = Resource.create!(
   user: users.sample,
   title: "CSS reference",
   description: "Comme htmlreference.io, le site propose une description et des exemples d'utilisation des propriétés css les plus courantes",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: html_cat, resource: cssreference
 CategoryTag.create! category: front_cat, resource: cssreference
@@ -239,9 +214,7 @@ codetogo = Resource.create!(
   user: users.sample,
   title: "Codetogo.io",
   description: "Snippets JS et React fréquemment utilisés, prêt à l'emploi",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: js_cat, resource: codetogo
 
@@ -250,9 +223,7 @@ locomotive = Resource.create!(
   user: users.sample,
   title: "Locomotive scroll",
   description: "Librairie JS pour faire des effets de parallax et des animations au scroll",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: js_cat, resource: locomotive
 CategoryTag.create! category: front_cat, resource: locomotive
@@ -262,9 +233,7 @@ thisvsthat = Resource.create!(
   user: users.sample,
   title: "This VS that",
   description: "Le site compare et explique les différences entre certaines propriétés/fonctions/attributs... qui peuvent sembler similaires",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: js_cat, resource: thisvsthat
 CategoryTag.create! category: front_cat, resource: thisvsthat
@@ -275,9 +244,7 @@ dribbble = Resource.create!(
   user: users.sample,
   title: "Dribbble",
   description: "Inspiration webdesign",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: webdesign_cat, resource: dribbble
 
@@ -286,9 +253,7 @@ jsfiddle = Resource.create!(
   user: users.sample,
   title: "JSFiddle",
   description: "JSFiddle est un service IDE en ligne et une communauté en ligne pour tester et présenter des extraits de code HTML, CSS et JavaScript créés par les utilisateurs et collaboratifs, appelés «fiddles». Il permet des appels AJAX simulés",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: front_cat, resource: jsfiddle
 CategoryTag.create! category: js_cat, resource: jsfiddle
@@ -299,9 +264,7 @@ exercism = Resource.create!(
   user: users.sample,
   title: "Exercism.io",
   description: "Exercism est une plate-forme de codage en ligne, open source et gratuite qui offre la pratique du code et le mentorat sur 50 langages de programmation différents.",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: back_cat, resource: exercism
 CategoryTag.create! category: js_cat, resource: exercism
@@ -315,9 +278,7 @@ squoosh = Resource.create!(
   user: users.sample,
   title: "Squoosh",
   description: "Squoosh est un nouveau service en ligne qui permet de compresser vos images sans perte de qualité visible, depuis votre navigateur.",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: front_cat, resource: squoosh
 
@@ -326,9 +287,7 @@ devweb = Resource.create!(
   user: users.sample,
   title: "Dev.web",
   description: "Lancer par google, dev.web est divisé en deux parties : Learn et Mesure. La première contient des tutoriels précis pour apprendre à concevoir des sites web efficaces ; la seconde est un outil d’analyse des performances pour tester son propre site internet.",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: front_cat, resource: devweb
 CategoryTag.create! category: back_cat, resource: devweb
@@ -339,9 +298,7 @@ bulma = Resource.create!(
   user: users.sample,
   title: "Bulma",
   description: "Bulma est un framework CSS open-source. 100% responsive, gratuit et modulaire, on importe que ce dont on a besoin",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: front_cat, resource: bulma
 CategoryTag.create! category: html_cat, resource: bulma
@@ -351,9 +308,7 @@ aos = Resource.create!(
   user: users.sample,
   title: "AOS - Animate on scroll libray",
   description: "Librairie JS d'animations au scroll",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: front_cat, resource: aos
 CategoryTag.create! category: js_cat, resource: aos
@@ -363,9 +318,7 @@ grafikart = Resource.create!(
   user: users.sample,
   title: "Grafikart",
   description: "Des centaines d'heures de video pour apprendre le html, css, sass, php, ruby....",
-  url: url,
-  favicon: LinkThumbnailer.generate(url).favicon,
-  image: img_url(url)
+  url: url
   )
 CategoryTag.create! category: back_cat, resource: grafikart
 CategoryTag.create! category: js_cat, resource: grafikart
