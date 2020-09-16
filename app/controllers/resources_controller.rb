@@ -69,7 +69,10 @@ class ResourcesController < ApplicationController
   end
 
   def attach_cloudinary_img(resource)
-    file = URI.open(img_url(resource.url))
+    img = img_url(resource.url)
+    return if img.nil?
+
+    file = URI.open(img)
     resource.photo.attach(io: file, filename: resource.title, content_type: 'image/png')
   end
 end
