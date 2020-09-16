@@ -42,6 +42,11 @@ gem 'pundit'
 gem 'simple_token_authentication'
 gem 'rack-cors'
 
+# background jobs
+gem 'sidekiq'
+
+# show failures in sidekiq admin
+gem 'sidekiq-failures', '~> 1.0'
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
