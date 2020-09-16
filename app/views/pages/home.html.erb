@@ -6,7 +6,9 @@
     <p>Vous voulez partager avec la communauté des sites fascinants?</p>
     <p>Quelque soit la raison, cette application est faite pour vous</p>
     <%= link_to "Voir les sites",resources_path, class: "btn btn-light" %>
-    <%= link_to "Se connecter",new_user_session_path, class: "btn btn-outline-light" %>
+    <% unless user_signed_in? %>
+      <%= link_to "Se connecter",new_user_session_path, class: "btn btn-outline-light" %>
+    <% end %>
   </div>
 </div>
 
