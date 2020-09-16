@@ -83,3 +83,9 @@ production:
   database: rails_dev_tools_links_production
   username: rails_dev_tools_links
   password: <%= ENV['RAILS_DEV_TOOLS_LINKS_DATABASE_PASSWORD'] %>
+
+staging:
+  <<: *default
+  database: rails_dev_tools_links_staging
+  username: rails_dev_tools_links
+  password: <%= ENV['RAILS_DEV_TOOLS_LINKS_DATABASE_PASSWORD'] %>
