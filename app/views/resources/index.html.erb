@@ -3,7 +3,7 @@
   <%= simple_form_for resources_path, method: "get" do |f|%>
     <div class="category-filter d-none ">
       <%= f.input :category, as: :check_boxes, collection: Category.all, input_html: { class: 'd-none' }   %>
-      <%= f.submit "Filtrer", class: "btn btn-primary filter-btn"%>
+      <%= f.submit "Go !", class: "btn btn-primary filter-btn"%>
     </div>
   <% end %>
 
