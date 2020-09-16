@@ -26,8 +26,8 @@ class ResourcesController < ApplicationController
     if @resource.photo.present? && @resource.save
       redirect_to resources_path
     elsif @resource.valid?
-      attach_cloudinary_img(@resource)
       @resource.save
+      NokogiriImageScrappingJob.perform_later(@resource.id)
       redirect_to resources_path
     else
       render :new
@@ -60,19 +60,16 @@ class ResourcesController < ApplicationController
     params.require(:resource).permit(:title, :description, :url, :photo, category_ids: [], categories_attributes: [:name])
   end
 
-  def img_url(url)
-    if Nokogiri::HTML(open(url)).css("meta[property='og:image']").blank?
-      nil
-    else
-      Nokogiri::HTML(open(url)).css("meta[property='og:image']").first.attributes["content"].value
-    end
-  end
+  # def img_url(url)
+  #   return if Nokogiri::HTML(open(url)).css("meta[property='og:image']").blank?
+  #   Nokogiri::HTML(open(url)).css("meta[property='og:image']").first.attributes["content"].value
+  # end
 
-  def attach_cloudinary_img(resource)
-    img = img_url(resource.url)
-    return if img.nil?
+  # def attach_cloudinary_img(resource)
+  #   img = img_url(resource.url)
+  #   return if img.nil?
 
-    file = URI.open(img)
-    resource.photo.attach(io: file, filename: resource.title, content_type: 'image/png')
-  end
+  #   file = URI.open(img)
+  #   resource.photo.attach(io: file, filename: resource.title, content_type: 'image/png')
+  # end
 end

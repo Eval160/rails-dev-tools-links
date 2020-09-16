@@ -16,4 +16,8 @@ Rails.application.routes.draw do
 
   get "/download", to: "pages#download", as: "download"
 
+  require "sidekiq/web"
+  authenticate :user, ->(user) { user.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 end
