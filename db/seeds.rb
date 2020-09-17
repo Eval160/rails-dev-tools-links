@@ -9,15 +9,15 @@ require "open-uri"
 require "nokogiri"
 
 def img_url(url)
-  unless Nokogiri::HTML(open(url)).css("meta[property='og:image']").blank?
-     Nokogiri::HTML(open(url)).css("meta[property='og:image']").first.attributes["content"].value
-  else
-    nil
-  end
+  return if Nokogiri::HTML(open(url)).css("meta[property='og:image']").blank?
+  Nokogiri::HTML(open(url)).css("meta[property='og:image']").first.attributes["content"].value
 end
 
 def attach_cloudinary_img(resource)
-  file = URI.open(img_url(resource.url))
+  img = img_url(resource.url)
+  return if img.nil?
+
+  file = URI.open(img)
   resource.photo.attach(io: file, filename: resource.title, content_type: 'image/png')
 end
 
@@ -335,7 +335,7 @@ puts "Finish create resources"
 
 puts "attach cloudinary photo"
 Resource.all.each do |resource|
-  attach_cloudinary_img(resource) if resource.image
+  attach_cloudinary_img(resource)
 end
 
 puts "Finish!"

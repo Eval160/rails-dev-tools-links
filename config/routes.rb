@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :favorites, only: [:destroy, :index]
   resources :categories, only: [:new, :create]
 
+  get "/my_resources", to: "resources#user_resources", as: "user_resources"
+
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :resources, only: [ :show, :create ]
