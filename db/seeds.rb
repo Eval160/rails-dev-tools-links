@@ -8,16 +8,16 @@
 require "open-uri"
 require "nokogiri"
 
-def img_url(url)
-  unless Nokogiri::HTML(open(url)).css("meta[property='og:image']").blank?
-     Nokogiri::HTML(open(url)).css("meta[property='og:image']").first.attributes["content"].value
-  else
-    nil
-  end
-end
+# def img_url(url)
+#   unless Nokogiri::HTML(open(url)).css("meta[property='og:image']").blank?
+#      Nokogiri::HTML(open(url)).css("meta[property='og:image']").first.attributes["content"].value
+#   else
+#     nil
+#   end
+# end
 
 def attach_cloudinary_img(resource)
-  file = URI.open(img_url(resource.url))
+  file = URI.open("https://d31ezp3r8jwmks.cloudfront.net/variants/n7FrJDsgkghwy62zoHhKTSK7/f9b8d76c29b1d756f01362da01335030709ba5759ccfa1449e73838f95611607")
   resource.photo.attach(io: file, filename: resource.title, content_type: 'image/png')
 end
 
