@@ -48,6 +48,10 @@ class ResourcesController < ApplicationController
     redirect_to resources_path
   end
 
+  def user_resources
+    @resources = current_user.resources
+  end
+
   private
 
   def set_params
