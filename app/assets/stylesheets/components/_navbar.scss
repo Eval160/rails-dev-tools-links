@@ -1,10 +1,18 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #213E69;
-
+  background: white;
+  box-shadow: 0px 1px 2px 0px #607D8B;
+  .nav-link.active {
+    border-bottom: 2px solid $blue;
+  }
 }
 #navbarSupportedContent > ul > li.nav-item > a {
-  color: white;
+  color: $blue;
+  margin: 1rem;
+  padding: 0;
+  &:hover {
+    border-bottom: 2px solid $blue;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -15,8 +23,12 @@
   width: 40px;
 }
 #navbarDropdown {
-  font-size: 40px;
-  margin: 0 8px;
+  font-size: 1.5rem;
+  margin: 10px 8px;
   height: 100%;
   width: auto;
+  color: $blue;
+  &::after {
+    display: none;
+  }
 }

@@ -31,6 +31,7 @@ import { categoryChoice } from '../components/category_choice';
 import { toggleFilter } from '../components/category_filter';
 import { togglePassword } from '../components/toggle_password';
 import { toggleUploadBtn } from '../components/upload_btn';
+import { toggleActiveClass } from '../components/navlink_active_class';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -39,4 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   toggleFilter();
   togglePassword();
   toggleUploadBtn();
+  toggleActiveClass();
 });

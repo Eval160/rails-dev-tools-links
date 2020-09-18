@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   padding: 8px;
-  background-color: #919FB5;
+  background-color: $gray;
   .footer-medias {
     display: flex;
     min-width: 30%;
@@ -14,7 +14,7 @@
     margin: 0;
   }
   * {
-    color: #D1D7DF;
+    color: white;
   }
   a {
     text-decoration: none;
