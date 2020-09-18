@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   end
 
   get "/download", to: "pages#download", as: "download"
+  get "/about", to: "pages#about", as: "about"
 
   require "sidekiq/web"
   authenticate :user, ->(user) { user.admin? } do

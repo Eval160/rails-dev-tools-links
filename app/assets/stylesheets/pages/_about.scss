@@ -1,0 +1,29 @@
+.wrapper-about {
+  color: black;
+  h1, h2{
+    color: $blue;
+  }
+
+  .medias a {
+    text-decoration: none;
+    padding: 0.5rem;
+  }
+  .presentation {
+    display: flex;
+    margin: 3rem 0;
+  }
+  .presentation i {
+  font-size: 1.3rem;
+  }
+
+  .presentation_img {
+    margin: 0 1rem;
+  }
+  .presentation_img img {
+    height: 200px;
+    object-fit: contain;
+  }
+  .presentation-jules h2, .presentation-jules .medias {
+    text-align: right;
+  }
+}
