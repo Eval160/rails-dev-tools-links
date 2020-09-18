@@ -24,6 +24,11 @@ end
 puts "Destroy all users"
 User.destroy_all
 
+puts "Purge cloudinary all ressource's images "
+Resource.all.each do |resource|
+  resource.photo.purge if resource.photo.attached?
+end
+
 puts "Destroy all resources"
 Resource.destroy_all
 
