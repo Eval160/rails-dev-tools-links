@@ -1,72 +1,63 @@
-<div class="wrapper-about">
-  <h1>Pourquoi ShareYourTools ?</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-
-  <div class="presentation presentation-val">
-    <div class="presentation_img">
-      <%= image_tag "vecrepont_photo.jpg", alt: "photo valentine ecrepont" %>
-    </div>
-    <div class="info">
-      <h2>Valentine Ecrepont</h2>
-      <div class="medias">
-        <%= link_to "https://www.linkedin.com/in/valentine-ecrepont-539519197/", target: "_blank" do %>
-          <i class="fab fa-linkedin"></i>
-        <% end %>
-        <%= link_to "https://github.com/Eval160", target: "_blank"  do %>
-          <i class="fab fa-github"></i>
-        <% end %>
-        <%= link_to "https://twitter.com/Eval160", target: "_blank"  do %>
-          <i class="fab fa-twitter"></i>
-        <% end %>
-        <%= mail_to "ecrepontvalentine@hotmail.fr", target: "_blank" do %>
-          <i class="fas fa-at"></i>
-        <% end %>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-    </div>
+<div class="wrapper-about mx-auto">
+  <div class="presentation-shareyourtools mt-2">
+    <h1>Pourquoi ShareYourTools ?</h1>
+    <p>Quel développeur n'a jamais eu des difficultés à retrouver un site super utile au milieu de ses 200 favoris?
+      Qui n'a jamais eu envie de partager un outils révolutionnaire à la communauté? Codé par 2 alumnis du Wagon Bordeaux, ShareYourTools a été créé pour répondre à ces besoins.
+      Nous faisons ce projet sur notre temps libre, et de nombreuses nouvelles fonctionnalitées devraient bientôt arriver.
+      Pour nous partager vos idées ou remarques
+      <%= mail_to "ecrepontvalentine@hotmail.fr", subject: "Remarques concernant ShareYourTools", target: "_blank" do %>
+      c'est par ici <i class="fas fa-pen"></i> !
+      <% end %>
+    </p>
   </div>
 
-  <div class="presentation presentation-jules">
-    <div class="info">
-      <h2>Jules Prévost</h2>
-      <div class="medias">
-        <%= link_to "https://www.linkedin.com/in/prevostjules/", target: "_blank" do %>
-          <i class="fab fa-linkedin"></i>
-        <% end %>
-        <%= link_to "https://github.com/prevostjules", target: "_blank"  do %>
-          <i class="fab fa-github"></i>
-        <% end %>
-        <%= link_to "https://twitter.com/prevost_jules", target: "_blank"  do %>
-          <i class="fab fa-twitter"></i>
-        <% end %>
-        <%= mail_to "", target: "_blank" do %>
-          <i class="fas fa-at"></i>
-        <% end %>
+
+  <div class="d-flex justify-content-around  my-5">
+    <div class="card-presentation ">
+      <div class="presentation-pictures">
+        <%= image_tag "vecrepont_photo.jpg", alt: "photo valentine ecrepont" %>
+        <div class="presentation-medias">
+          <%= link_to "https://www.linkedin.com/in/valentine-ecrepont-539519197/", target: "_blank" do %>
+            <i class="fab fa-linkedin"></i>
+          <% end %>
+          <%= link_to "https://github.com/Eval160", target: "_blank"  do %>
+            <i class="fab fa-github"></i>
+          <% end %>
+          <%= link_to "https://twitter.com/Eval160", target: "_blank"  do %>
+            <i class="fab fa-twitter"></i>
+          <% end %>
+        </div>
       </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-    </div>
-    <div class="presentation_img">
-      <%= image_tag "jprevost_photo.jpg", alt: "photo valentine ecrepont" %>
+      <div class="presentation-infos">
+        <h3>Valentine Ecrepont</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam nesciunt perspiciatis animi cumque provident at explicabo. Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+        <button type="button" class="btn btn-outline-primary">Contact</button>
+        <button type="button" class="btn btn-outline-primary">Portfolio</button>
+      </div>
     </div>
 
+
+    <div class="card-presentation">
+      <div class="presentation-pictures">
+        <%= image_tag "jprevost_photo.jpg", alt: "photo jules prevost" %>
+        <div class="presentation-medias">
+          <%= link_to "https://www.linkedin.com/in/prevostjules/", target: "_blank" do %>
+            <i class="fab fa-linkedin"></i>
+          <% end %>
+          <%= link_to "https://github.com/prevostjules", target: "_blank"  do %>
+            <i class="fab fa-github"></i>
+          <% end %>
+          <%= link_to "https://twitter.com/prevost_jules", target: "_blank"  do %>
+            <i class="fab fa-twitter"></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="presentation-infos">
+        <h3>Jules Prévost</h3>
+          <p>Développeur web (Ruby On Rails) freelance, Teacher Assistant au Wagon Bordeaux et journaliste pigiste pour GEO, Le Monde, Le Figaro Magazine, La Vie et quelques autres.</p>
+          <button type="button" class="btn btn-outline-primary">Contact</button>
+          <button type="button" class="btn btn-outline-primary">Portfolio</button>
+      </div>
+    </div>
   </div>
-
 </div>
