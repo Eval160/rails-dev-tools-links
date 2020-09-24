@@ -1,5 +1,4 @@
 .wrapper-about {
-  // width: 75%;
   color: black;
   .section {
     display: flex;
@@ -115,11 +114,35 @@
 
 
 
+@media screen and (max-width: 992px) {
+  .section-about img {
+    display: none;
+  }
+}
 
+@media (max-width: 768px) {
+  .wrapper-about .section {
+    flex-direction: column;
+    .title {
+      writing-mode: initial;
+      transform: rotate(0deg);
+    }
+  }
+  .team-cards, .wrapper-about .section > p {
+    padding: 0;
+  }
 
+ }
 
-
-
+@media (max-width: 576px) {
+  .team-cards {
+    flex-direction: column;
+    margin: 0 auto 0;
+  }
+  .team-card {
+    margin: 0 0 2rem 0;
+  }
+}
 
 
 
