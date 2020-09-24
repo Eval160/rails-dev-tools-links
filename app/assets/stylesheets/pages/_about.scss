@@ -1,15 +1,82 @@
 .wrapper-about {
-  width: 75%;
+  // width: 75%;
   color: black;
-}
-
-.presentation-shareyourtools a {
-  border-bottom: 1px solid $blue;
-  padding-bottom: 2px;
-  &:hover {
-    text-decoration: none;
+  .section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .title {
+    transform: rotate(180deg);
+    font-weight: 900;
+    font-size: 48px;
+    font-family: Roboto Slab;
+    font-style: normal;
+    line-height: 63px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: transparent;
+    writing-mode: vertical-rl;
+    -webkit-text-stroke: 1px $blue;
+    text-transform: capitalize;
+    margin-right: 1rem;
+  }
+  p {
+    font-family: Spectral;
+    margin-bottom: 0;
+  }
+  .section > p {
+    padding: 0 4rem 0;
+  }
+  .section-about img {
+    height: 160px;
   }
 }
+
+.team-cards {
+  padding: 0 4rem 0;
+}
+
+.team-card {
+  width: 200px;
+  // height: 370px;
+  margin-right: 5rem;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    align-self: center;
+  }
+  h3 {
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 32px;
+  }
+  .social-medias {
+    display: flex;
+    justify-content: space-between;
+  }
+  .social-medias i {
+    font-size: 22px;
+  }
+  .btn-outline-primary {
+    margin-top: auto;
+  }
+}
+
+
+
+
+
+
+
+
+
 
 
 

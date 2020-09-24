@@ -1,6 +1,6 @@
 <div class="wrapper-about mx-auto">
-  <div class="presentation-shareyourtools mt-2">
-    <h1>Pourquoi ShareYourTools ?</h1>
+  <div class="section section-about mt-5">
+    <h1 class="title">A <br> propos</h1>
     <p>Quel développeur n'a jamais eu des difficultés à retrouver un site super utile au milieu de ses 200 favoris?
       Qui n'a jamais eu envie de partager un outils révolutionnaire à la communauté? Codé par 2 alumnis du Wagon Bordeaux, ShareYourTools a été créé pour répondre à ces besoins.
       Nous faisons ce projet sur notre temps libre, et de nombreuses nouvelles fonctionnalitées devraient bientôt arriver.
@@ -9,14 +9,18 @@
       c'est par ici <i class="fas fa-pen"></i> !
       <% end %>
     </p>
+    <%= image_tag "undraw_online_connection_6778.svg", alt: "" %>
+
   </div>
 
+  <div class="section section-team my-5">
+    <h1 class="title">La <br> team</h1>
+    <div class="team-cards d-flex">
 
-  <div class="d-flex justify-content-around  my-5">
-    <div class="card-presentation ">
-      <div class="presentation-pictures">
+      <div class="team-card">
         <%= image_tag "vecrepont_photo.jpg", alt: "photo valentine ecrepont" %>
-        <div class="presentation-medias">
+        <h3>Valentine Ecrepont</h3>
+        <div class="social-medias">
           <%= link_to "https://www.linkedin.com/in/valentine-ecrepont-539519197/", target: "_blank" do %>
             <i class="fab fa-linkedin"></i>
           <% end %>
@@ -26,21 +30,18 @@
           <%= link_to "https://twitter.com/Eval160", target: "_blank"  do %>
             <i class="fab fa-twitter"></i>
           <% end %>
+          <%= link_to "#", target: "_blank" do %>
+            <i class="fas fa-at"></i>
+          <% end %>
         </div>
-      </div>
-      <div class="presentation-infos">
-        <h3>Valentine Ecrepont</h3>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam nesciunt perspiciatis animi cumque provident at explicabo. Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
-        <button type="button" class="btn btn-outline-primary">Contact</button>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
         <button type="button" class="btn btn-outline-primary">Portfolio</button>
       </div>
-    </div>
 
-
-    <div class="card-presentation">
-      <div class="presentation-pictures">
-        <%= image_tag "jprevost_photo.jpg", alt: "photo jules prevost" %>
-        <div class="presentation-medias">
+      <div class="team-card">
+        <%= image_tag "jprevost_photo.jpg", alt: "photo valentine ecrepont" %>
+        <h3>Jules Prévost</h3>
+        <div class="social-medias">
           <%= link_to "https://www.linkedin.com/in/prevostjules/", target: "_blank" do %>
             <i class="fab fa-linkedin"></i>
           <% end %>
@@ -50,14 +51,15 @@
           <%= link_to "https://twitter.com/prevost_jules", target: "_blank"  do %>
             <i class="fab fa-twitter"></i>
           <% end %>
+          <%= link_to "#", target: "_blank" do %>
+            <i class="fas fa-at"></i>
+          <% end %>
         </div>
+        <p>Développeur web (Ruby On Rails) freelance, Teacher Assistant au Wagon Bordeaux et journaliste pigiste pour GEO, Le Monde, Le Figaro Magazine, La Vie et quelques autres.</p>
+        <button type="button" class="btn btn-outline-primary">Portfolio</button>
       </div>
-      <div class="presentation-infos">
-        <h3>Jules Prévost</h3>
-          <p>Développeur web (Ruby On Rails) freelance, Teacher Assistant au Wagon Bordeaux et journaliste pigiste pour GEO, Le Monde, Le Figaro Magazine, La Vie et quelques autres.</p>
-          <button type="button" class="btn btn-outline-primary">Contact</button>
-          <button type="button" class="btn btn-outline-primary">Portfolio</button>
-      </div>
+
+
     </div>
   </div>
 </div>
