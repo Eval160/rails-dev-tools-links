@@ -96,7 +96,7 @@ production:
   cache_manifest: true
 
 
-staging:
+stagingw:
   <<: *default
 
   # Production depends on precompilation of packs prior to booting for performance.
