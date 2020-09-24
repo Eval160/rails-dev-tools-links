@@ -3,10 +3,10 @@ class ResourcesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @resources = Resource.includes(:categories)
+    @resources = Resource.includes(:categories, photo_attachment: :blob)
     p = params["/resources"]
     if !params["/resources"].nil? && p[:category].length != 1 && p[:category]
-      resources = Resource.joins(:category_tags).where(category_tags: { category: p[:category] })
+      resources = Resource.joins(:category_tags).includes(:categories, photo_attachment: :blob).where(category_tags: { category: p[:category] })
       @resources = resources.uniq
     end
   end
@@ -49,7 +49,7 @@ class ResourcesController < ApplicationController
   end
 
   def user_resources
-    @resources = current_user.resources
+    @resources = current_user.resources.includes(:categories, photo_attachment: :blob)
   end
 
   private

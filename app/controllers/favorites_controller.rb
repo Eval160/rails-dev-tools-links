@@ -21,6 +21,6 @@ class FavoritesController < ApplicationController
   end
 
   def index
-    @favorites = Favorite.where(user: current_user)
+    @favorites = Favorite.includes(resource: [{photo_attachment: :blob}, :categories]).where(user: current_user)
   end
 end
