@@ -8,4 +8,6 @@ class PagesController < ApplicationController
     @api_key = current_user.authentication_token
   end
 
+  def about
+  end
 end

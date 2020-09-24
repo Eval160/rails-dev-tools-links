@@ -1,0 +1,168 @@
+.wrapper-about {
+  color: black;
+  .section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .title {
+    transform: rotate(180deg);
+    font-weight: 900;
+    font-size: 48px;
+    font-family: Roboto Slab;
+    font-style: normal;
+    line-height: 63px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: transparent;
+    writing-mode: vertical-rl;
+    -webkit-text-stroke: 1px $blue;
+    text-transform: capitalize;
+    margin-right: 1rem;
+  }
+  p {
+    font-family: Spectral;
+    margin-bottom: 0;
+  }
+  .section > p {
+    padding: 0 4rem 0;
+  }
+  .section-about img {
+    height: 160px;
+  }
+}
+
+.team-cards {
+  padding: 0 4rem 0;
+}
+
+.team-card {
+  width: 200px;
+  // height: 370px;
+  margin-right: 5rem;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    align-self: center;
+  }
+  h3 {
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 32px;
+  }
+  .social-medias {
+    display: flex;
+    justify-content: space-between;
+  }
+  .social-medias i {
+    font-size: 22px;
+  }
+  .btn-outline-primary {
+    margin-top: auto;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.card-presentation {
+  border: 1px solid rgba(33, 62, 105, 0.8);
+  position: relative;
+  background-color: white;
+  width: 365px;
+  min-height: 215px;
+  font-size: 12px;
+  .presentation-pictures {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -40px;
+    background-color: white;
+    box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  .presentation-pictures img {
+    width: 150px;
+    height: 150px;
+  }
+  .presentation-medias {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+  }
+  .presentation-medias i {
+    font-size: 20px;
+    }
+  .presentation-infos {
+    padding: 16px 8px 8px 140px;
+  }
+}
+
+
+
+
+@media screen and (max-width: 992px) {
+  .section-about img {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper-about .section {
+    flex-direction: column;
+    .title {
+      writing-mode: initial;
+      transform: rotate(0deg);
+    }
+  }
+  .team-cards, .wrapper-about .section > p {
+    padding: 0;
+  }
+
+ }
+
+@media (max-width: 576px) {
+  .team-cards {
+    flex-direction: column;
+    margin: 0 auto 0;
+  }
+  .team-card {
+    margin: 0 0 2rem 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
