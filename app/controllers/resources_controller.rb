@@ -3,7 +3,7 @@ class ResourcesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @resources = Resource.all
+    @resources = Resource.includes(:categories)
     p = params["/resources"]
     if !params["/resources"].nil? && p[:category].length != 1 && p[:category]
       resources = Resource.joins(:category_tags).where(category_tags: { category: p[:category] })
