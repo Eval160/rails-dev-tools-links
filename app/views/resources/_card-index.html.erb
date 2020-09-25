@@ -45,7 +45,7 @@
             <span>Editer</span>
           <% end %>
         </div>
-        <div class="card-resource_link resource_delete d-flex flex-column align-items-center">
+        <div class="card-resource_link resource_delete d-flex flex-column align-items-center <%= "disabled" unless resource.user == current_user %>">
           <%= link_to resource_path(resource), method: :delete do %>
             <i class="fas fa-trash"></i>
             <span>Supprimer</span>
