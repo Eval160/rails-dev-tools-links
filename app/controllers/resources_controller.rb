@@ -44,6 +44,7 @@ class ResourcesController < ApplicationController
   end
 
   def destroy
+    @resource.photo.purge if @resource.photo.attached?
     @resource.destroy
     redirect_to resources_path
   end
