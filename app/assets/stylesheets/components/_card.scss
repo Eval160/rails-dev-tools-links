@@ -63,6 +63,11 @@
     align-items: center;
     color: #213E69;
   }
+  .disabled a {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.5;
+  }
 }
 
 .card-tuto {
