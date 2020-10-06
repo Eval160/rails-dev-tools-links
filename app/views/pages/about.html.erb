@@ -1,12 +1,12 @@
 <div class="wrapper-about mx-auto">
   <div class="section section-about mt-5">
     <h1 class="title">A <br> propos</h1>
-    <p>Quel développeur n'a jamais eu des difficultés à retrouver un site super utile au milieu de ses 200 favoris?
-      Qui n'a jamais eu envie de partager un outils révolutionnaire à la communauté? Codé par 2 alumnis du Wagon Bordeaux, ShareYourTools a été créé pour répondre à ces besoins.
+    <p>Codé par 2 alumnis du Wagon Bordeaux, ShareYourTools est un moyen simple et rapide de sauvegarder vos sites préférés,
+      vou pouvez les retrouver à tout moment et les partager.
       Nous faisons ce projet sur notre temps libre, et de nombreuses nouvelles fonctionnalitées devraient bientôt arriver.
       Pour nous partager vos idées ou remarques
       <%= mail_to "ecrepontvalentine@hotmail.fr", subject: "Remarques concernant ShareYourTools", target: "_blank" do %>
-      c'est par ici <i class="fas fa-pen"></i> !
+        c'est par ici <i class="fas fa-envelope"></i> !
       <% end %>
     </p>
     <%= image_tag "undraw_online_connection_6778.svg", alt: "" %>
@@ -30,12 +30,12 @@
           <%= link_to "https://twitter.com/Eval160", target: "_blank"  do %>
             <i class="fab fa-twitter"></i>
           <% end %>
-          <%= link_to "#", target: "_blank" do %>
+          <%= mail_to "ecrepontvalentine@gmail.com", target: "_blank" do %>
             <i class="fas fa-at"></i>
           <% end %>
         </div>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
-        <button type="button" class="btn btn-outline-primary">Portfolio</button>
+        <p>Développeuse web Ruby on Rails et Javascript, passionnée d'UX et particulièrement sensible à l'accessibilité et à l'éco-conception web.</p>
+        <%= link_to "Portfolio", "#", target: "_blank", class: "btn btn-outline-primary"%>
       </div>
 
       <div class="team-card">
@@ -51,12 +51,12 @@
           <%= link_to "https://twitter.com/prevost_jules", target: "_blank"  do %>
             <i class="fab fa-twitter"></i>
           <% end %>
-          <%= link_to "#", target: "_blank" do %>
+          <%= mail_to "jules@prevostdev.com", target: "_blank" do %>
             <i class="fas fa-at"></i>
           <% end %>
         </div>
         <p>Développeur web (Ruby On Rails) freelance, Teacher Assistant au Wagon Bordeaux et journaliste pigiste pour GEO, Le Monde, Le Figaro Magazine, La Vie et quelques autres.</p>
-        <button type="button" class="btn btn-outline-primary">Portfolio</button>
+        <%= link_to "Portfolio", "https://www.prevostdev.com", target: "_blank", class: "btn btn-outline-primary"%>
       </div>
 
 
