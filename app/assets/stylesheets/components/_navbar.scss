@@ -6,12 +6,12 @@
     border-bottom: 2px solid $blue;
     padding-bottom: 0;
   }
-}
-#navbarSupportedContent > ul > li.nav-item > a {
-  color: $blue;
-  margin: 1rem;
-  padding: 2px;
-  &:hover {
+  .nav-link {
+    color: $blue;
+    margin: 1rem;
+    padding: 2px;
+  }
+  .nav-link:hover {
     border-bottom: 2px solid $blue;
     padding-bottom: 0;
   }
