@@ -57,7 +57,7 @@
   .form-check:hover label {
     cursor: pointer;
   }
-  input:checked + label {
+  input:checked + label, input:hover + label {
     background-color: $blue;
   }
   .filter-btn {
