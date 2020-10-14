@@ -1,57 +1,47 @@
-<% if resource.photo.attached?  %>
-  <div class="card-resource" style="background-image: url('<%= cl_image_path resource.photo.key, height: 250, width: 400, crop: :fill %>')">
-<% else %>
-  <div class="card-resource" style="background-image: url('https://images.unsplash.com/photo-1489844097929-c8d5b91c456e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=80')">
-<% end %>
-    <div class="card-resource_infos d-flex flex-column justify-content-between">
-      <div class="card-resource_title d-flex justify-content-between">
-        <h3><%= resource.title %></h3>
-        <div class="">
-          <% if signed_in? && current_user.favorites.find_by(resource: resource) %>
-            <%= link_to favorite_path(current_user.favorites.find_by(resource: resource)), method: :delete, remote: true  do %>
-              <i class="fas fa-heart"></i>
-             <% end %>
-          <% elsif  signed_in?%>
-            <%= link_to resource_favorites_path(resource), method: :post, remote: true  do %>
-              <i class="far fa-heart"></i>
-            <% end %>
-          <% else %>
-            <div class="disabled-fav">
-              <%= link_to new_user_session_path do %>
-                 <i class="far fa-heart"></i>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
+<div class="card-resource" style="--background:#213E69; --text:white;">
+  <div class="multi-button">
+    <% if signed_in? && current_user.favorites.find_by(resource: resource) %>
+      <%= link_to favorite_path(current_user.favorites.find_by(resource: resource)), method: :delete, remote: true  do %>
+        <i class="fas fa-heart"></i>
+       <% end %>
+    <% elsif  signed_in?%>
+      <%= link_to resource_favorites_path(resource), method: :post, remote: true  do %>
+        <i class="far fa-heart"></i>
+      <% end %>
+    <% else %>
+      <div class="disabled-fav">
+        <%= link_to new_user_session_path do %>
+           <i class="far fa-heart"></i>
+        <% end %>
       </div>
-      <div class="card-resource_text">
+    <% end %>
+    <%= link_to edit_resource_path(resource)  do %>
+      <i class="fas fa-edit"></i>
+    <% end %>
+    <%= link_to resource_path(resource), class: "#{'d-none' if resource.user != current_user}" , method: :delete do %>
+      <i class="fas fa-trash"></i>
+    <% end %>
+  </div>
+  <% if resource.photo.attached?  %>
+    <div class="content" style="background-image: url('<%= cl_image_path resource.photo.key, height: 250, width: 400, crop: :fill %>')">
+  <% else %>
+    <div class="content" style="background-image: url('https://images.unsplash.com/photo-1489844097929-c8d5b91c456e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=80')">
+  <% end %>
+      <div class="header d-flex justify-content-between">
+        <%= link_to resource.url , class: "d-flex" , target: "_blank" do %>
+          <h3><%= resource.title %></h3>
+          <i class="fas fa-external-link-alt ml-2"></i>
+        <% end %>
+      </div>
+      <div class="description">
         <p><%= resource.description %></p>
       </div>
+
       <div class="card-resource_tag">
-      <% resource.categories.each do |category| %>
-        <span class="badge badge-primary"><%= category.name %></span>
-      <% end %>
-    </div>
-      <div class="card-resource_links-hover d-flex justify-content-between">
-        <div class="card-resource_link resource_url">
-          <%= link_to resource.url , target: "_blank" do %>
-            <i class="fas fa-external-link-alt"></i>
-            <span>Voir le site</span>
-          <% end %>
-        </div>
-        <div class="card-resource_link resource_edit d-flex flex-column align-items-center">
-          <%= link_to edit_resource_path(resource)  do %>
-            <i class="fas fa-edit"></i>
-            <span>Editer</span>
-          <% end %>
-        </div>
-        <div class="card-resource_link resource_delete d-flex flex-column align-items-center <%= "disabled" unless resource.user == current_user %>">
-          <%= link_to resource_path(resource), method: :delete do %>
-            <i class="fas fa-trash"></i>
-            <span>Supprimer</span>
-          <% end %>
-        </div>
+        <% resource.categories.each do |category| %>
+          <span class="badge badge-primary"><%= category.name %></span>
+        <% end %>
       </div>
-    </div>
   </div>
+</div>
 
