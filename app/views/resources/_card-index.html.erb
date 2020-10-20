@@ -9,11 +9,9 @@
         <i class="far fa-heart"></i>
       <% end %>
     <% else %>
-      <div class="disabled-fav">
-        <%= link_to new_user_session_path do %>
-           <i class="far fa-heart"></i>
-        <% end %>
-      </div>
+      <%= link_to new_user_session_path do %>
+         <i class="far fa-heart"></i>
+      <% end %>
     <% end %>
     <%= link_to edit_resource_path(resource)  do %>
       <i class="fas fa-edit"></i>
